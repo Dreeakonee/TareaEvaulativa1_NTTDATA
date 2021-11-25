@@ -33,7 +33,7 @@
 		<table class="table">
 			<thead>
 				 <tr>
-				 	<th scope="col">#</th>
+				 	<th scope="col">#Boleta</th>
                     <th scope="col">Monto</th>
                     <th scope="col-2">ACCIONES</th>
                  </tr>
