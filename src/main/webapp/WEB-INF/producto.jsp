@@ -54,10 +54,11 @@
                       <td>${producto.getDescripcion()}</td>
 					  <td>${producto.getPrecio()}</td>
 			          <td>
-			          	<form action="/producto/actualizar" method="get">
+			          	<a href="/producto/${producto.getId()}/editar" class="btn btn-prrimary" role="button" data-bs-toggle="button">Editar</a>
+			          	<!--<form action="/producto/actualizar" method="get">
 			          		<input type="hidden" name="id" value="${producto.getId()}">
 			          		<input type="submit" value="ACTUALIZAR">
-			          	</form>
+			          	</form>-->
 			          </td>
 			          <td>
 			          	<form action="/producto/eliminar" method="get">

@@ -44,10 +44,12 @@
             		<th scope="row">${venta.getId()}</th>
                       <td>${venta.getPrecio()}</td>
 			          <td>
-			          	<form action="/venta/actualizar" method="get">
+			          	<a href="/venta/${venta.getId()}/editar" class="btn btn-prrimary" role="button" data-bs-toggle="button">Editar</a>
+			          	<!--<form action="/venta/actualizar" method="get">
 			          		<input type="hidden" name="id" value="${venta.getId()}">
 			          		<input type="submit" value="ACTUALIZAR">
-			          	</form>
+			          	</form>-->
+			          	
 			          </td>
 			          <td>
 			          	<form action="/venta/eliminar" method="get">

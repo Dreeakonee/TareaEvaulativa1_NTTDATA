@@ -59,10 +59,12 @@
 					  <td>${usuario.getEdad()}</td>
 			          <td>${usuario.getEmail()}</td>
 			          <td>
-			          	<form action="/usuario/actualizar" method="get">
+			          	<!--<form action="/usuario/actualizar" method="get">
 			          		<input type="hidden" name="id" value="${usuario.getId()}">
 			          		<input type="submit" value="ACTUALIZAR">
-			          	</form>
+			          	</form>-->
+			          	
+			          	<a href="/usuario/${usuario.getId()}/editar" class="btn btn-prrimary" role="button" data-bs-toggle="button">Editar</a>
 			          </td>
 			          <td>
 			          	<form action="/usuario/eliminar" method="get">
