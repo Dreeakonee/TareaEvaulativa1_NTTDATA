@@ -22,8 +22,7 @@ public class UsuarioService {
 	}
 
 	public void insertarUsuario(@Valid Usuario usuario){
-		usuarioRepository.save(usuario);
-		
+		usuarioRepository.save(usuario);	
 	}
 
 	public Usuario buscarUsuarioId(Long id) {
