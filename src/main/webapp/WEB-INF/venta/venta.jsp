@@ -1,19 +1,10 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
-<!DOCTYPE html>
-<html>
-	<head>
-		<!-- FRAMEWORK BOOTSTRAP para el estilo de la pagina-->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-	
-		<meta charset="ISO-8859-1">
-		<title>Venta::</title>
-	</head>
-	
+<jsp:include page='../template/header.jsp'/>
+
 	<body>
+	<jsp:include page='../template/navbar.jsp'/>
 		<div class="container-fluid">
 	
 		<form:form method="post" action="/venta/generarventa" modelAttribute="venta">
@@ -44,12 +35,7 @@
             		<th scope="row">${venta.getId()}</th>
                       <td>${venta.getPrecio()}</td>
 			          <td>
-			          	<a href="/venta/${venta.getId()}/editar" class="btn btn-prrimary" role="button" data-bs-toggle="button">Editar</a>
-			          	<!--<form action="/venta/actualizar" method="get">
-			          		<input type="hidden" name="id" value="${venta.getId()}">
-			          		<input type="submit" value="ACTUALIZAR">
-			          	</form>-->
-			          	
+	<!-- EDITAR -->			<a href="/venta/${venta.getId()}/editar" class="btn btn-prrimary" role="button" data-bs-toggle="button">Editar</a>
 			          </td>
 			          <td>
 			          	<form action="/venta/eliminar" method="get">
@@ -65,6 +51,5 @@
 	
 	</div>
 	
-
+	<jsp:include page='../template/footer.jsp'/>
 	</body>
-</html>

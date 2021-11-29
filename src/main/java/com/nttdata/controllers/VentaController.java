@@ -24,7 +24,7 @@ public class VentaController {
 	@RequestMapping("")
 	public String venta(@ModelAttribute("venta") Venta venta, Model model) {
 		model.addAttribute("listaVentas", ventaService.obtenerListaVentas());
-		return "venta.jsp";
+		return "/venta/venta.jsp";
 	}
 	
 	@RequestMapping("/generarventa")
@@ -51,7 +51,7 @@ public class VentaController {
 		System.out.println("editar");
 		Venta venta = ventaService.buscarVentaId(id);
 		model.addAttribute("venta", venta);
-		return "editarventa.jsp";
+		return "/venta/editarventa.jsp";
 	}
 	
 	@RequestMapping(value="/update/{id}", method=RequestMethod.POST)

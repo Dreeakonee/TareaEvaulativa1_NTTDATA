@@ -27,6 +27,14 @@
 			<form:label path="precio">Precio:</form:label>
 			<form:input type="text" path="precio"/>
 			<br>
+			
+			<form:label path="categoria">Categoria:</form:label>
+			<form:select class="form-select" path="categoria">
+                <c:forEach var="categoria" items="${listaCategorias}">
+                    <form:option value="${categoria.getId()}"> ${categoria.getNombre()} </form:option>
+                </c:forEach>
+            </form:select>
+            
 			<input type="button" value="Limpiar">
 			<input type="submit" value="Submit">
 

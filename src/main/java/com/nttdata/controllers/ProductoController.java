@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.nttdata.models.Producto;
+import com.nttdata.services.CategoriaService;
 import com.nttdata.services.ProductoService;
 
 
@@ -22,12 +23,15 @@ public class ProductoController {
 	@Autowired
 	ProductoService productoService;
 	
+	@Autowired
+	CategoriaService categoriaService;
+	
 	@RequestMapping("")
 	public String producto(@ModelAttribute("producto") Producto producto,
 			Model model){
-		
+		model.addAttribute("listaCategorias", categoriaService.obtenerListaCategorias());
 		model.addAttribute("listaProductos", productoService.obtenerListaProductos());
-		return "producto.jsp";
+		return "/producto/producto.jsp";
 	}
 	
 	@RequestMapping("/agregarproducto")
@@ -50,16 +54,15 @@ public class ProductoController {
 	
 	@RequestMapping("/{id}/editar")
 	public String edit(@PathVariable("id") Long id, Model model) {
-		
+		model.addAttribute("listaCategorias", categoriaService.obtenerListaCategorias());
 		System.out.println("editar");
 		Producto producto = productoService.buscarProductoId(id);
 		model.addAttribute("producto", producto);
-		return "editarproducto.jsp";
+		return "/producto/editarproducto.jsp";
 	}
 	
 	@RequestMapping(value="/update/{id}", method=RequestMethod.POST)
 	public String update(@Valid @ModelAttribute("producto") Producto producto) {
-		
 		System.out.println("update");
 		productoService.updateProducto(producto);
 		return "redirect:/producto";

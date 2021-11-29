@@ -26,7 +26,7 @@ public class UsuarioController {
 			Model model){
 		
 		model.addAttribute("listaUsuarios", usuarioService.obtenerListaUsuarios());
-		return "usuario.jsp";
+		return "/usuario/usuario.jsp";
 	}
 	
 	@RequestMapping("/login")
@@ -36,7 +36,6 @@ public class UsuarioController {
 		usuarioService.insertarUsuario(usuario);//IMPORTANTE!
 		return "redirect:/usuario";
 	}
-	
 	
 	@RequestMapping("/eliminar")
 	public String eliminarUsuario(@RequestParam("id") Long id) {
@@ -54,7 +53,7 @@ public class UsuarioController {
 		System.out.println("editar");
 		Usuario usuario = usuarioService.buscarUsuarioId(id);
 		model.addAttribute("usuario", usuario);
-		return "editarusuario.jsp";
+		return "/usuario/editarusuario.jsp";
 	}
 	
 	@RequestMapping(value="/update/{id}", method=RequestMethod.POST)
