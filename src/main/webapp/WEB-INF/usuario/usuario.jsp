@@ -8,7 +8,7 @@
 	<jsp:include page='../template/navbar.jsp'/>
 		<div class="container-fluid">
 	
-		<form:form method="post" action="/usuario/login" modelAttribute="usuario">
+		<form:form method="post" action="/usuario/registrar" modelAttribute="usuario">
 		
 			<form:label path="nombre">Nombre:</form:label>
 			<form:input type="text" path="nombre"/>

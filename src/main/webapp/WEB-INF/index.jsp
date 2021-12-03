@@ -7,9 +7,9 @@
 <body>
 	<jsp:include page='template/navbar.jsp'/>
 	<div class="container">
-	<h2>Bienveidos!!</h2>
+	<h2>Bienvenidos!!</h2>
 	 	<ul>
-		 	<li><a href="/usuario">Registrate!</a></li>
+		 	<li><a href="/usuario/registrarjsp">Registrate!</a></li>
 		 	<li><a href="/login">Ingresa</a></li> <!-- INGRESO/LOGIN -->
 		 </ul>
 	</div>

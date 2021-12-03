@@ -30,11 +30,31 @@ public class UsuarioController {
 	}
 	
 	@RequestMapping("/login")
-	public String login (@Valid @ModelAttribute("usuario") Usuario usuario)
+	public String login (@RequestParam("email") String email, @RequestParam("password") String password)
 	{
-		System.out.println(usuario.getNombre() + " " + usuario.getApellido() + " " + usuario.getEdad() + " " + usuario.getEmail());
-		usuarioService.insertarUsuario(usuario);//IMPORTANTE!
-		return "redirect:/usuario";
+		System.out.println(email + " "+ password);
+		boolean resultado = usuarioService.loginUsuario(email,password);//IMPORTANTE!
+		if(resultado) {
+			return "redirect:/home";
+		}else {
+			return "redirect:/login";
+		}
+	}
+	
+	@RequestMapping("registrarjsp")
+	public String registrarjsp(@ModelAttribute("usuario")Usuario usuario) {
+		
+		return "/usuario/registro.jsp";
+	}
+	
+	@RequestMapping("/registrar")//realiza insersion
+	public String registrar(@Valid @ModelAttribute("usuario")Usuario usuario) {
+		Usuario usuario2 = usuarioService.findByEmail(usuario.getEmail());
+		if(usuario2 == null) {
+			usuarioService.registroUsuario(usuario);
+		}
+		//usuarioService.registroUsuario(usuario);
+		return "/usuario/login.jsp";
 	}
 	
 	@RequestMapping("/eliminar")
@@ -65,10 +85,6 @@ public class UsuarioController {
 	}
 	
 	
-	/*@RequestMapping("/editar/{id}")
-	public String editar(@PathVariable Long id, Model model) {
-		
-		return "edicion.jsp";
-	}*/
+
 	
 }
