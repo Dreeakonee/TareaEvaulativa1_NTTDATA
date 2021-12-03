@@ -35,7 +35,7 @@ public class UsuarioController {
 		System.out.println(email + " "+ password);
 		boolean resultado = usuarioService.loginUsuario(email,password);//IMPORTANTE!
 		if(resultado) {
-			return "redirect:/home";
+			return "redirect:/usuario";
 		}else {
 			return "redirect:/login";
 		}

@@ -5,11 +5,11 @@
 <jsp:include page='template/header.jsp'/>
 
 <body>
-	<jsp:include page='template/navbar.jsp'/>
+	<!--<jsp:include page='template/navbar.jsp'/>-->
 	<div class="container">
 	<h2>Bienvenidos!!</h2>
 	 	<ul>
-		 	<li><a href="/usuario/registrarjsp">Registrate!</a></li>
+		 	<li><a href="/registrar">Registrate!</a></li>
 		 	<li><a href="/login">Ingresa</a></li> <!-- INGRESO/LOGIN -->
 		 </ul>
 	</div>

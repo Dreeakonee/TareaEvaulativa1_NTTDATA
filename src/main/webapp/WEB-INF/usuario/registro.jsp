@@ -5,7 +5,7 @@
 <jsp:include page='../template/header.jsp'/>
 
 	<body>
-	<jsp:include page='../template/navbar.jsp'/>
+	<!--<jsp:include page='../template/navbar.jsp'/>-->
 		<div class="container-fluid">
 		<h2>CREAR USUARIO</h2>
 	

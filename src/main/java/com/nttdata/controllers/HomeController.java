@@ -1,7 +1,10 @@
 package com.nttdata.controllers;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.nttdata.models.Usuario;
 
 @Controller
 public class HomeController {
@@ -20,6 +23,11 @@ public class HomeController {
 	public String login() {
 		return "usuario/login.jsp";
 	}
-	//2:37:38
+	
+	@RequestMapping("/registrar")
+	public String registrar(@ModelAttribute("usuario") Usuario usuario){
+		return "usuario/registro.jsp";
+	}
+	//2:50:14
 
 }
